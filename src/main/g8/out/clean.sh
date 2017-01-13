@@ -5,4 +5,4 @@
 # use this to remove all these tmpaux files
 set -x
 ME=`dirname $0`
-rm paper.aux paper.log paper.out paper.toc paper.bbl paper.bcf paper.blg paper.run.xml
+rm ${ME}/paper.aux ${ME}/paper.log ${ME}/paper.out ${ME}/paper.toc ${ME}/paper.bbl ${ME}/paper.bcf ${ME}/paper.blg ${ME}/paper.run.xml

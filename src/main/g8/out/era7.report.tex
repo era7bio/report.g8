@@ -3,7 +3,6 @@
 \usepackage{ifxetex}
 % xetex font-related packages
 \usepackage{fontspec,xltxtra,xunicode}
-\usepackage{fixltx2e}
 % use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 
@@ -53,6 +52,7 @@
 \usepackage{unicode-math}
 
 % english support
+\usepackage{csquotes}
 \usepackage{polyglossia}
 \setmainlanguage{english}
 
@@ -97,9 +97,9 @@
 \DeclareFieldFormat{pages}{#1\adddot}
 \DeclareFieldFormat[article,inbook,incollection,inproceedings,patent,thesis,unpublished]{number}{\mkbibparens{#1}\addcolon}
 
-\DeclareFieldFormat{doi}{\newline DOI:  \ttfamily\footnotesize\href{https://dx.doi.org/#1}{#1}}
+\DeclareFieldFormat{doi}{\newline DOI:  \ttfamily\small\href{https://dx.doi.org/#1}{#1}}
 \DeclareFieldFormat{url}{}
-\DeclareFieldFormat[unpublished,misc,article]{url}{\newline URL: \ttfamily\footnotesize\href{#1}{#1}}
+\DeclareFieldFormat[unpublished,misc,article]{url}{\newline URL: \ttfamily\small\href{#1}{#1}}
 \DeclareFieldFormat
   [article,inbook,incollection,inproceedings,misc,patent,thesis,unpublished]
   {journaltitle}{\newline\emph{#1}}
@@ -125,9 +125,7 @@
 \newfontfamily\sectfont[
   Mapping = tex-text,
   Color = Grey,
-  BoldFont={* Bold},
-  Numbers={OldStyle, Proportional},
-  Ligatures=NoRequired
+  BoldFont={* Bold}
 ]{Bitter}
 \usepackage{sectsty}
 \allsectionsfont{\sectfont\textmd}
@@ -135,9 +133,7 @@
 % Source Code Pro for monospace
 \setmonofont[
   Mapping=tex-ansi,
-  Color=solarized@base00,
-  Numbers=Lining,
-  Ligatures=NoRequired
+  Color=solarized@base00
 ]{Source Code Pro}
 
 % Open Sans Light for the title
@@ -253,7 +249,7 @@ $endif$
 \usepackage[breaklinks=true]{hyperref}
 \hypersetup{
   setpagesize=false, % page size defined by xetex
-  unicode=false, % unicode breaks when used with xetex
+  % unicode=false, % unicode breaks when used with xetex
   xetex,
   pdfnewwindow,
   colorlinks,%
